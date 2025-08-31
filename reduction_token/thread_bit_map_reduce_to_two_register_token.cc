@@ -1266,11 +1266,11 @@ string thread_bit_map_reduce_to_two_register_token::run()
             return_code_str << "buffer[0] = ";
             if (first_col_index_of_sub_matrix != 0)
             {
-                return_code_str << "x_arr[" << dense_ptr << " + (" << code_of_data_type(nz_data_type_compress) << " *)input_col)[c]" << " + " << first_col_index_of_sub_matrix << ") * K];" << endl;
+                return_code_str << "x_arr[" << dense_ptr << " + ((" << code_of_data_type(nz_data_type_compress) << " *)input_col)[c]" << " + " << first_col_index_of_sub_matrix << ") * K];" << endl;
             }
             else
             {
-                return_code_str << "x_arr[" << dense_ptr << " + " << code_of_data_type(nz_data_type_compress) << " *)input_col)[c]" << " * K];" << endl;
+                return_code_str << "x_arr[" << dense_ptr << " + ((" << code_of_data_type(nz_data_type_compress) << " *)input_col)[c]" << " * K];" << endl;
             }
         }
 
@@ -1619,3 +1619,4 @@ shared_ptr<basic_IO_of_reduction>thread_bit_map_reduce_to_two_register_token::ge
 {
     return this->output_IO;
 }
+
