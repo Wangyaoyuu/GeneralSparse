@@ -82,3 +82,26 @@ To fully utilize **GeneralSparse**, follow the step:
 **GeneralSparse** is a powerful and flexible framework for efficient sparse matrix multiplication on GPUs, ideal for pruned LLM inference. Its modular architecture and automation tools make it easy to integrate, extend, and adapt to various scenarios.
 
 A highly recommended tool for developers aiming to deploy performant, sparse-aware models in real-world systems.
+
+---
+
+### 📞Communication and Citation
+
+You are welcome to communicate and contact us via sdygwyy@163.com.
+
+```
+@inproceedings{10.5555/3768039.3768064,
+author = {Wang, Yaoyu and Guo, Xiao and Xiao, Junmin and Chen, De and Tan, Guangming},
+title = {GeneralSparse: bridging the gap in SpMM for pruned large language model inference on GPUs},
+year = {2025},
+isbn = {978-1-939133-48-9},
+publisher = {USENIX Association},
+address = {USA},
+abstract = {The rapid growth of generative model parameters poses challenges in deployment, especially regarding weight storage and inference latency. The weight pruning is an effective technique to reduce the computational and memory overhead of Large Language Models (LLMs) while maintaining accuracy, which transforms the matmuls to Sparse Matrix Multiplication (SpMM) computation. However, the diverse pruning methods introduce varying sparsity patterns that challenge high-performance SpMM on GPUs. Existing solutions are limited with adaptability to these patterns, flexibility in handling different sparsity levels, and support for efficient optimizations.In this work, we present GeneralSparse, a novel solution that bridges this gap by leveraging the abstraction of memory access and reduction spaces. GeneralSparse designs the process of dividing box to adapt dynamically to diverse pruning patterns and proposes hierarchical reduction algorithms tailored to GPU hierarchies. Through evaluations on pruned LLM weight matrices and the SuiteSparse collection, GeneralSparse achieves up to 20.82\texttimes{} speedup over cuSPARSE libraries. At end-to-end inference time on LLMs, GeneralSparse achieves up to 2.33\texttimes{} speedup over counterparts.},
+booktitle = {Proceedings of the 2025 USENIX Conference on Usenix Annual Technical Conference},
+articleno = {25},
+numpages = {16},
+location = {Boston, MA, USA},
+series = {USENIX ATC '25}
+}
+```
