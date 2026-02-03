@@ -10,6 +10,9 @@
 
 2. The original mtx is in COO column-major order, and the adjusted matrix input is in COO row-major order format.
 
+3. **Note** please keep the nonzero entries in the MTX file arranged in **row-major order**. You can use the following script to preprocess matrices downloaded from SuiteSparse: https://github.com/PAA-NCIC/AlphaSparse/blob/main/data_prepare.py
+
+
 
 ### Pruned Weight Matrix 
 
