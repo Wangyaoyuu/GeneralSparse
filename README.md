@@ -53,7 +53,7 @@ The main components of the repository:
 
 To fully utilize **GeneralSparse**, follow the step:
 
-1. **Prepare your sparse matrix**: Choose the appropriate sparse file .mtx format as in **`matrix_example/`**.
+1. **Prepare your sparse matrix**: Choose the appropriate sparse file .mtx format as in **`matrix_example/`**.  Please keep the nonzero entries in the MTX file arranged in **row-major order** and you can use the following script to preprocess matrices downloaded from SuiteSparse: https://github.com/PAA-NCIC/AlphaSparse/blob/main/data_prepare.py
 2. **Configurable Parameters**: configure the parameter by `global_config.json` file. In this file, modify the `ROOT_PATH_STR` and `spmv_header_file` by the directory location, and adjust `HALF` whether to use half precision.
 3. **Compile the project**: Run `make token_test -j16` to generate executable file `./token_test`.
 4. **Generate the tailed program for sparse matrix**: Run `./token_test matrix_example/suite_collection/IG5-18.mtx 8` and `8` is the column number of dense matrix and can be adjusted.
