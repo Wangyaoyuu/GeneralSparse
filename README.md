@@ -58,7 +58,9 @@ To fully utilize **GeneralSparse**, follow the step:
 3. **Compile the project**: Run `make token_test -j16` to generate executable file `./token_test`.
 4. **Generate the tailed program for sparse matrix**: Run `./token_test matrix_example/suite_collection/IG5-18.mtx 8` and `8` is the column number of dense matrix and can be adjusted.
 5. **View the generated code program**: The generated programs can be viewed in **`data_source/`** directory and can be executed by `a.out` in sub-directory.
-6. **Other baselines**: The other methods can be viewed in **`baseline/`** directory. Here, we provide the code implementation of cuSPARSE, and other methods are provided by their Github repo-link.
+6. **Result Collection**: Use the python program script (`obtain_result.py`) in the GeneralSparse directory to traverse the `./a.out` executable files of all subfiles under **`data_source/`** and get the best gflops result. 
+7. **Other baselines**: The other methods can be viewed in **`baseline/`** directory. Here, we provide the code implementation of cuSPARSE, and other methods are provided by their Github repo-link.
+
 
 #### ❕ Use Steps for Large Language Models
 
