@@ -54,12 +54,16 @@ The main components of the repository:
 To fully utilize **GeneralSparse**, follow the step:
 
 1. **Prepare your sparse matrix**: Choose the appropriate sparse file .mtx format as in **`matrix_example/`**.  Please keep the nonzero entries in the MTX file arranged in **row-major order** and you can use the following script to preprocess matrices downloaded from SuiteSparse: https://github.com/PAA-NCIC/AlphaSparse/blob/main/data_prepare.py
-2. **Configurable Parameters**: configure the parameter by `global_config.json` file. In this file, modify the `ROOT_PATH_STR` and `spmv_header_file` by the directory location, and adjust `HALF` whether to use half precision.
+2. **Configurable Parameters**: configure the parameter by `global_config.json` file. In this file, modify the `ROOT_PATH_STR` and `spmv_header_file` by the directory location (please refer to the following **Tips** for guidance on how to modify this), and adjust `HALF` whether to use half precision.
 3. **Compile the project**: Run `make token_test -j16` to generate executable file `./token_test`.
 4. **Generate the tailed program for sparse matrix**: Run `./token_test matrix_example/suite_collection/IG5-18.mtx 8` and `8` is the column number of dense matrix and can be adjusted.
 5. **View the generated code program**: The generated programs can be viewed in **`data_source/`** directory and can be executed by `a.out` in sub-directory.
 6. **Result Collection**: Use the python program script (`obtain_result.py`) in the GeneralSparse directory to traverse the `./a.out` executable files of all subfiles under **`data_source/`** and get the best gflops result. 
 7. **Other baselines**: The other methods can be viewed in **`baseline/`** directory. Here, we provide the code implementation of cuSPARSE, and other methods are provided by their Github repo-link.
+
+**Modification Tips for Your Configuration:** 
+1. It is recommended to globally search for the string  `/home/wangyaoyu/GeneralSparse`  and replace it with the path to your own download directory. For example, in VS Code, use global search string (shortcut: `Ctrl + Shift + F`) to replace  `/home/wangyaoyu/GeneralSparse` → `/home/root/GeneralSparse`.
+2. In the file `cuda_code/make_kernel.sh`, please modify `-arch=sm_80` to match your specific GPU architecture and CUDA version.
 
 
 #### ❕ Use Steps for Large Language Models
